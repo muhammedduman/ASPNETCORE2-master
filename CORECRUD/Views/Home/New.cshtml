@@ -1,0 +1,27 @@
+﻿@model CORECRUD.Models.Department;
+
+@{
+	Layout = "_Shared";
+}
+
+<h1 class="mt-4">Departman Ekle</h1>
+<br />
+
+<form method="post">
+	@Html.LabelFor(x => x.DepartmentName)
+	@Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+
+	@Html.LabelFor(x => x.Description1)
+	@Html.TextAreaFor(x => x.Description1, new { @class = "form-control" })
+
+
+	@Html.LabelFor(x => x.Description2)
+	@Html.TextAreaFor(x => x.Description2, new { @class = "form-control" })
+
+	@Html.LabelFor(x => x.DepartmentID)
+	@Html.TextAreaFor(x => x.DepartmentID, new { @class = "form-control" })
+
+	<br/>
+	<button class="btn btn-success">Yeni Departman Kaydet</button>
+
+</form>

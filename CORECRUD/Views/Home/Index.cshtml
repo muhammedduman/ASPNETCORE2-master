@@ -1,0 +1,37 @@
+﻿@using CORECRUD.Models
+@model List<Department>
+
+@{
+	Layout = "_Shared";
+}
+
+<h1 class="mt-4">Departman Listesi</h1>
+<br />
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Departman</th>
+			<th scope="col">Açıklama - 1</th>
+			<th scope="col">Açıklama - 2</th>
+			<th scope="col">Güncelle</th>
+			<th scope="col">Sil</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var dr in Model)
+		{
+			<tr>
+				<th scope="row">@dr.DepartmentID</th>
+				<td>@dr.DepartmentName</td>
+				<td>@dr.Description1</td>				
+				<td>@dr.Description2</td>
+				<td> <a class="btn btn-warning" href="/Home/New?ID=@dr.DepartmentID">Güncelle</a> </td>
+				<td> <a class="btn btn-danger" href="/Home/Delete?ID=@dr.DepartmentID">Sil</a> </td>
+			</tr>
+		}
+
+
+	</tbody>
+</table>

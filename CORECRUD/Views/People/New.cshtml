@@ -1,0 +1,37 @@
+﻿ 
+@model CORECRUD.Models.People;
+
+@{
+	Layout = "_Shared";
+}
+
+<h1 class="mt-4">Personel Ekle/Güncelle</h1>
+<br />
+
+<form method="post">
+	@Html.LabelFor(x => x.PeopleID)
+	@Html.TextBoxFor(x => x.PeopleID, new { @class = "form-control" })
+
+	@Html.LabelFor(x => x.Name)
+	@Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+
+	@Html.LabelFor(x => x.Surname)
+	@Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+
+	@Html.LabelFor(x => x.City)
+	@Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+
+	<hr />
+
+	<select id="DepartmentID" name="DepartmentID" class="form-control">
+		 @foreach (var item in ViewBag.Department)
+		{
+			<option value="@item.Value"> @item.Text </option>
+		}
+	</select>
+
+
+	<br />
+	<button class="btn btn-success">Yeni Departman Kaydet</button>
+
+</form>
